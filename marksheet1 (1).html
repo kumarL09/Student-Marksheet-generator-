@@ -1,0 +1,211 @@
+<HTML>
+    <HEAD>
+    <STYLE>
+    body
+    {
+     border-radius: 20px;
+     border-style: double;
+     border-color: rgba(20, 7, 21, 0.864);
+     position: absolute;
+     width: 1000px;
+     height: 905px;
+     top: 15px;
+     left: 45px;
+     padding: 30px 30px 15px 30px;
+     background-color: rgb(247, 245, 194);
+    }
+    #tbl,#tbl2
+    {
+    border-collapse:collapse;
+    font-size:18;
+    font-family:Century Gothic;
+    background-color:rgb(244, 244, 174);
+    }
+    .demo
+    {
+    position:absolute;
+    left:45px;
+    top:380px;
+    font-size:17;
+    font-family:Arial;
+    font-weight:bold;
+    background-color: rgb(249, 247, 247);
+    margin-top:35px;
+    border-collapse:collapse;
+    }
+    #demoname
+    {
+    font-size:15px
+    }
+    .btn
+    {
+    position:absolute;
+    top:355px;
+    left:720px;
+    }
+    </STYLE>
+    
+    <SCRIPT>
+    function myFun()
+    {
+    var a=document.form1.txtname.value;
+    document.getElementById("demoname").innerHTML=a;
+    var i=document.form1.txtroll.value;
+    document.getElementById("demoroll").innerHTML=i;
+    var b=document.form1.txtfname.value;
+    document.getElementById("demofname").innerHTML=b;
+    var c=document.form1.txtins.value;
+    document.getElementById("demoins").innerHTML=c;
+    var d=document.form1.txtbatch.value;
+    document.getElementById("demobatch").innerHTML=d;
+    var e=document.form1.txtcomp.value;
+    document.getElementById("democomp").innerHTML=e;
+    var f=document.form1.txtweb.value;
+    document.getElementById("demoweb").innerHTML=f;
+    var g=document.form1.txtjava.value;
+    document.getElementById("demojava").innerHTML=g;
+    var h=document.form1.txtpython.value;
+    document.getElementById("demopython").innerHTML=h;
+    var j=document.form1.txtdot.value;
+    document.getElementById("demodot").innerHTML=j;
+    var k=document.form1.txtdiv.value;
+    document.getElementById("demodiv").innerHTML=k;
+    var txt1=eval(parseFloat(document.form1.txtcomp.value)+parseFloat(document.form1.txtweb.value)
+    +parseFloat(document.form1.txtjava.value)+parseFloat(document.form1.txtpython.value)+parseFloat(document.form1.txtdot.value));
+    document.getElementById("demototal").innerHTML=txt1;
+    var txt2=eval(parseFloat(txt1*100)/500);
+    document.getElementById("demoper").innerHTML=txt2.toFixed(2)+"%";
+    //grade points
+    var grade;
+    if (txt2 >= 80) {
+    document.getElementById("demograde").innerHTML = "A+";
+    } else if (txt2 >= 70) {
+    document.getElementById("demograde").innerHTML = "A";
+    } else if (txt2 >= 60) {
+    document.getElementById("demograde").innerHTML = "B";
+    } else if (txt2 >= 50) {
+    document.getElementById("demograde").innerHTML= "C";
+    } else if (txt2 >= 40) {
+    document.getElementById("demograde").innerHTML = "D";
+    } else {
+    document.getElementById("demograde").innerHTML = "F";
+    }
+    //grade color
+    if (txt2<40) {
+    document.getElementById('demograde').style.color = "red";
+    document.getElementById('demograde').style.color = "red";
+    }else{
+    document.getElementById('demograde').style.color = "black";
+    document.getElementById('demograde').style.color = "black";
+    }
+    }
+    </SCRIPT>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </HEAD>
+    <BODY>
+    <DIV class="color">
+    <H1 align="center"style="font-family:cambria;font-size:40;background-color: #ffe36c";><U>STUDENT MARKSHEET</H1>
+    <FIELDSET>
+    <LEGEND> <B>STUDENT INFORMATION </B></LEGEND>
+    <TABLE align="center" id="tbl">
+    <FORM name="form1">
+    </TR>
+    <TD width="140"><B><u>Name:</u></B></TD> <TD><INPUT type="text" name="txtname"/></TD>
+    <TD> &nbsp; &nbsp;<B><u>Father Name:</u></B></TD><TD> <INPUT type="text" name="txtfname"/></TD>
+    <TD style="text-indent:16px"><B><u>Roll No:</u></B></TD><TD> <INPUT type="text" name="txtroll"/></TD>
+    </TR>
+    
+    <TR>
+    <TD width="140" ><B><u> Institute Name:</u></B></TD><TD> <INPUT type="text" name="txtins"/></TD>
+    <TD style="text-indent:16px"><B><u>Batch:</u><B></B></TD><TD> <INPUT type="text" name="txtbatch"/></TD>
+    <TD> &nbsp; &nbsp;<B><u>Division Board:</u></B></TD><TD> <INPUT type="text" name="txtdiv"/></TD>
+    </TR>
+    </TABLE>
+    </FIELDSET></BR>
+    <FIELDSET>
+    <LEGEND><B> SUBJECTS MARKS </B></LEGEND>
+    <TABLE id="tbl2">
+    <TR>
+    <TD> <B>Complier Design:</B></TD><TD> <INPUT type="text" name="txtcomp" maxlength="4" size="10"/><B> / 100 </B></TD>
+    </TR>
+    <TR>
+    <TD> <B>Web Designing:</B></TD><TD>  <INPUT type="text" name="txtweb" maxlength="4" size="10"/><B> / 100</B></TD>
+    </TR>
+    <TR>
+    <TD> <B>Java With oops:</B></TD><TD> <INPUT type="text" name="txtjava" maxlength="4" size="10"/> <B>/ 100</B></TD>
+    </TR>
+    <TR>
+    <TD> <B>Python:</B></TD><TD> <INPUT type="text" name="txtpython" maxlength="4" size="10" /> <B>/ 100</B></TD>
+    </TR>
+    <TR>
+    <TD> <B>Dot Net:</B></TD><TD> <INPUT type="text" name="txtdot" maxlength="4" size="10" /><B> /100</B></TD>
+    </TR>
+    <TR>
+    <TD>&nbsp;</TD>
+    </TR>
+    </TABLE>
+    </FIELDSET>
+    <DIV class="btn">
+    <button style="font-size:17;background-color: #f0ac27;" type="button" onclick='myFun()'>Generate</button>
+    <button style="font-size:17;background-color: #cde634;" type="Reset">Reset</button>
+    </DIV>
+    <DIV class="demo">
+    <TABLE border="3">
+    <TR>
+    <TH colspan="8" width="240"> Student Information </TH>
+    </TR>
+    <TR>
+    <TD width="135">Name:</TD><TD><FONT face="arial" id="demoname"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Roll No:</TD><TD><FONT face="arial" id="demoroll"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Father Name:</TD><TD><FONT face="arial" id="demofname"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Institute Name:</TD><TD><FONT face="arial" id="demoins"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Batch:</TD> <TD><FONT face="arial" id="demobatch"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Division Board:</TD> <TD><FONT face="arial" id="demodiv"></FONT></TD>
+    </TR>
+    <TR>
+    <TH colspan="8" width="240"> Subjects Marks</TH>
+    </TR>
+    <TR>
+    <TD width="135">Complier Design:</TD> <TD><FONT face="arial" id="democomp"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Web Designing:</TD><TD><FONT face="arial" id="demoweb"></FONT></TD>
+    </TR>
+    <TD width="135">Java With oops:</TD><TD><FONT face="arial" id="demojava"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Python:</TD><TD><FONT face="arial" id="demopython"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135">Dot Net:</TD><TD><FONT face="arial" id="demodot"></FONT></TD>
+    </TR>
+    <TR>
+    <TH colspan="8" width="240"> Marks Result </TH>
+    </TR>
+    <TR>
+    <TD width="135"><B>TOTAL:</B></TD><TD> <FONT face="arial" id="demototal"></FONT></TT></TD>
+    </TR>
+    <TR>
+    <TD width="135"><B>Percentage:</B></TD><TD><FONT face="arial" id="demoper"></FONT></TD>
+    </TR>
+    <TR>
+    <TD width="135"><B>Grade:</B></TD><TD><FONT face="arial" id="demograde"></FONT></TD>
+    </TR>
+    </TABLE>
+    </DIV>
+    </DIV>
+    </BODY>
+    </HTML>
+
+    
+    
